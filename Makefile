@@ -13,6 +13,9 @@ skeleton: clean
 	echo '0' >> data_version.txt
 	mkdir sample_data
 
+install:
+	pip3 install -r requirements.txt
+
 clean:
 	- rm -rf sample_data 
 	- rm -rf timestamps.txt 
