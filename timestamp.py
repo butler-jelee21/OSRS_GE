@@ -35,14 +35,14 @@ def write_data(data, filename):
 	file.close()
 
 def request_data(version):
-	url = 'https://storage.googleapis.com/osbuddy-exchange/summary.json'
+	url = 'https://rsbuddy.com/exchange/summary.json'
 	save_file = 'sample_data/' + str(update_version()) + '.json'
 	try:
 		r = requests.get(url)
 		data = r.json()
 		write_data(json.dumps(data), save_file)
 	except:
-		print('ERROR: In request_data\nStatus Code: ' + r.status_code)
+		print('ERROR: In request_data\nStatus Code: ' + str(r.status_code))
 
 def compose_datapoint():
 	request_data(get_version())
